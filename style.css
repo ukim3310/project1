@@ -1,0 +1,106 @@
+@font-face {
+    font-family: 'Barlow-Light';
+    src: url('/fonts/Barlow-Light.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Barlow-Thin';
+    src: url('/fonts/Barlow-Thin.woff') format('woff');
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background-color:#EFF6FF;
+    color: #2A4A5C;
+}
+
+h1 {
+    font-family: 'Barlow-Light', sans-serif;
+}
+
+h2 {
+    font-family:'Barlow-Thin', sans-serif;
+}
+.container{
+    display: flex;
+    height: 100vh;
+}
+
+.left-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-side, .image {
+    max-width: 100%;
+    height: auto;
+}
+
+.right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-side h1, .right-side h2 {
+    text-align: left;
+    margin-left: 50px;
+}
+
+.right-side h1{
+    margin-top: 110px;
+}
+
+.right-side h2 {
+    margin-top: 0px;
+}
+
+
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form {
+    border: 1px solid #333;
+    padding: 10px;
+    border-radius: 0%;
+}
+
+.button, .form-container  {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+}
+.line {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    position: relative;
+    margin: 20px 0;
+    display: inline-block;
+}
+
+.line::before, .line::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 20%;
+    border-top: 1px solid #333;
+    transform: translateY(-50%);
+}
+.line::before {
+    left: 0;
+}
+.line::after {
+    right: 0;
+}
