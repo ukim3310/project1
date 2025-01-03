@@ -1,106 +1,320 @@
-@font-face {
-    font-family: 'Barlow-Light';
-    src: url('/fonts/Barlow-Light.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Barlow-Thin';
-    src: url('/fonts/Barlow-Thin.woff') format('woff');
-}
-
-body, html {
+* {
     margin: 0;
     padding: 0;
-    height: 100%;
+    box-sizing: border-box;
 }
 
 body {
-    background-color:#EFF6FF;
-    color: #2A4A5C;
+    margin: 0;
+    height: 100vh;
+    align-items: center;
+    background-color:#EFF6FF;  
+    font-family: "Barlow", serif;
+    font-style: normal;
+}
+
+img {
+    max-height: 100%;
+    max-width: 100%;
 }
 
 h1 {
-    font-family: 'Barlow-Light', sans-serif;
+    font-family: 'Barlow', serif;
+    font-size: 25px;
+    color: #2A4A5C;
+    font-family: "Barlow" serif;
+    font-weight: 400;
 }
 
-h2 {
-    font-family:'Barlow-Thin', sans-serif;
+
+.investor-text {
+    font-size: 20px;
+    margin-top: 5px;
+    font-family: 'Barlow', serif;
+    font-weight: 400;
+    color: #2A4A5C;
 }
-.container{
+
+p, .select-text, .info-container {
+    font-family: "Barlow", serif;
+    font-weight: 300;
+    font-style: normal;
+    color: #2A4A5C;
+}
+
+.select-text {
+    margin-top: 10px;
+}
+
+.info-container {
+    position: relative;
+    font-size: 12px;
+}
+
+.info-container label {
+    position: absolute;
+    top: 20%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+p {
+    margin-top: 15px;
+    font-size: 17px;
+    font-weight: 400;
+    color: #7B8A92;
+}
+
+.container {
+    margin: 70px 60px 70px 60px;
     display: flex;
-    height: 100vh;
-}
-
-.left-side {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.left-side, .image {
     max-width: 100%;
-    height: auto;
+    overflow: hidden;
+    gap: 50px;
+    background-color: #FFFFFF;
 }
+
+
+.overlay {
+    position: absolute;
+    top: 80px; 
+    left: 100px;
+  }
 
 .right-side {
     flex: 1;
     display: flex;
     flex-direction: column;
-}
-
-.right-side h1, .right-side h2 {
-    text-align: left;
-    margin-left: 50px;
+    margin-left: 30px;
+    margin-right: 60px;
 }
 
 .right-side h1{
-    margin-top: 110px;
+    margin-top: 100px;
 }
-
-.right-side h2 {
-    margin-top: 0px;
-}
-
 
 .form-container {
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.email-form {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 40px;
+    align-items: center;
 }
 
-.form {
-    border: 1px solid #333;
-    padding: 10px;
-    border-radius: 0%;
-}
-
-.button, .form-container  {
-    display: flex;
-    justify-content: space-around;
-    margin: 30px 0;
-}
-.line {
-    text-align: center;
-    font-size: 18px;
-    color: #333;
+.labelline {
     position: relative;
-    margin: 20px 0;
-    display: inline-block;
 }
 
-.line::before, .line::after {
-    content: '';
+.form-container input {
+    width: 100%;
+    text-align: left;
+    padding: 20px 0 10px 10px;
+    font-size: 16px;
+    font-family: "Barlow", serif;
+    font-weight: 400;
+    box-sizing: border-box;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+input:focus {
+    box-shadow: -1px 0 0 0 rgb(0, 89, 255);
+    outline: none;
+}
+
+.registration-buttons {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.registration-buttons button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    font-family: "Barlow", serif;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer; 
+}
+
+.facebook-button {
+    position: relative;
+    background-color: #255A9B;
+    transition: transform 0.2s ease;
+}
+
+.facebook-button:active {
+    transform: scale(0.9);
+}
+
+.facebook-button svg {
     position: absolute;
-    top: 50%;
-    width: 20%;
-    border-top: 1px solid #333;
-    transform: translateY(-50%);
+    left: 15px; 
+    width: 16px;       
+    height: 16px;      
 }
-.line::before {
-    left: 0;
+
+.linkedin-button {  
+    position: relative;
+    background-color: #0076B6; 
+    transition: transform 0.2s ease;
 }
-.line::after {
-    right: 0;
+
+.linkedin-button:active {
+    transform: scale(0.9);
 }
+
+.linkedin-button svg {
+    position: absolute;
+    left: 15px;
+    width: 16px;       
+    height: 16px;      
+}
+
+.select-text {
+    font-size: 14px;
+    color: #7B8A92;
+    font-weight: 400;
+}
+
+.line-text {
+    font-family: "Barlow", serif;
+    font-weight: 300;
+    font-style: normal;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    text-align: center;
+    gap: 5px;
+    margin: 40px 130px 40px 130px;
+    font-size: 10px;    
+    color: black;
+}
+
+.line {
+    border-bottom: 1px solid #7B8A92;
+    margin-bottom: 5px;
+    opacity: 0.5;
+}
+
+
+.tooltip {
+    position: relative;
+    cursor: pointer;
+    font-family: "Barlow", serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 260px;
+    margin: 10px 0 0 60px;
+    font-size: 14px;
+    background-color: #FFFFFF;
+    text-align: left;
+    border-radius: 5px;
+    padding: 15px;
+    position: absolute;
+    z-index: 1;
+    top: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    color: #7B8A92;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.input-group {
+    display: flex;
+    gap: 5px;
+    background: transparent;
+}
+
+.input-group input {
+    flex: 1;
+    border-radius: 5px;
+}
+
+.radio-group {
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 60px;
+  }
+  
+
+  .radio-group label {
+    font-family: "Barlow", serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 5px;
+    color: #333;
+  }
+
+  .info-icon {
+    width: 10px;
+    height: 10px;
+    fill: #7B8A92;
+  }
+
+  .checkbox-group {
+    margin-top: 130px;
+    font-family: "Barlow", serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 12px;
+    color: #7B8A92;
+  }
+  
+  .checkbox-group label {
+    display: flex;
+    align-items: center;
+    font-family: "Barlow", serif;
+    gap: 5px;
+    color: #666;
+  }
+  
+  .checkbox-group a {
+    font-family: "Barlow", serif;
+    color: #3698FB;
+    text-decoration: none;
+  }
+  
+  .submit-btn {
+    width: 50%;
+    padding: 10px;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    background-color: #3698FB;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.2s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #005582;
+  }
+  .submit-btn:active {
+    transform: scale(0.9);
+  }
